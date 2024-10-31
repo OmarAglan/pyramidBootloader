@@ -6,30 +6,47 @@ This IsThe Leagcy Bootloader For OS Pyramid
 # Setup
 Install The Nessecry Requirments For this to work:
 ```
-sudo apt update
-sudo apt install make nasm
-sudo apt install qemu-system
-sudo apt-get install genisoimage
+sudo apt-get install make gcc gnu-efi nasm qemu-system-x86 ovmf parted mtools dosfstools
 ```
 
 ## Building
-### To Make an .Img File
-```
-Make
-```
 
-### To make an .Iso File 
+### To Build Leagcy
 ```
-make build/main.iso
+make legacy
+```
+### To Build UEFI
+```
+make uefi
+```
+### To Build hybrid Image
+```
+make hybrid
 ```
 
 ## Runing On Vitrual Machine
 
 ### Linux
-- Boots as floppy disk
+#### Run Leagcy
 ```
-qemu-system-i386 -fda build/floppy.img
+make run-legacy
 ```
-
+#### Run UEFI
+```
+make run-uefi
+```
+#### Run Hybrid
+```
+make run-hybrid
+```
 ### Windows
+make an iso:
+```
+sudo apt-get install xorriso
+```
 Use The Oracle VirtualBox, VmWare or any simller program.
+
+## Clean the Build DIR
+```
+make clean
+```
