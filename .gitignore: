@@ -1,8 +1,0 @@
-build/
-*.bin
-*.img
-*.iso
-*.efi
-*.o
-*.obj
-*.so
